@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/admin/api/products';
+  private baseUrl = 'https://whispering-atoll-68233-83ac924b6541.herokuapp.com/admin/api/products';
 
   constructor(private http: HttpClient) { }
 
@@ -35,7 +35,7 @@ export class ProductService {
 
   addPromotionToProduct(productId: number, promotionData: any): Observable<any> {
     return this.http.put(
-        `http://localhost:8080/auth/api/products/promotion/${productId}`,
+        `https://whispering-atoll-68233-83ac924b6541.herokuapp.com/auth/api/products/promotion/${productId}`,
         promotionData,
         { headers: this.getAuthHeaders() }
     );
@@ -45,6 +45,6 @@ export class ProductService {
 
   // Méthode pour récupérer tous les produits
   getProducts(): Observable<any> {
-    return this.http.get('http://localhost:8080/auth/api/products/all');
+    return this.http.get('https://whispering-atoll-68233-83ac924b6541.herokuapp.com/auth/api/products/all');
   }
 }

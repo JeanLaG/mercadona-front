@@ -20,7 +20,7 @@
       <h3>{{ product.libelle }}</h3>
       <p>{{ product.categorie }}</p>
       <p>{{ product.description }}</p>
-      <img [src]="'http://localhost:8080' + product.imageUrl" alt="{{ product.libelle }}" class="product-image">
+      <img [src]="'https://whispering-atoll-68233-83ac924b6541.herokuapp.com/' + product.imageUrl" alt="{{ product.libelle }}" class="product-image">
 
       <!-- Affichage du prix et de la promotion -->
       <div *ngIf="product.promotion > 0" class="price promo">

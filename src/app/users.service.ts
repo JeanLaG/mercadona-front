@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UsersService {
 
-  private BASE_URL = "http://localhost:8080/";
+  private BASE_URL = "https://whispering-atoll-68233-83ac924b6541.herokuapp.com";
   
   // BehaviorSubject to track authentication status
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
