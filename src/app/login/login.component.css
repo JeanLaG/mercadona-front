@@ -1,0 +1,104 @@
+/* Container for the login form */
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #F5F5F5; /* Fond léger */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour effet de profondeur */
+    text-align: center;
+}
+
+/* Title */
+.container h2 {
+    font-size: 2em;
+    color: #388E3C; /* Vert moyen pour correspondre à la navbar */
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; /* Police moderne */
+}
+
+/* Error message */
+.error-message {
+    color: #D32F2F; /* Rouge pour les erreurs */
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    background-color: #FFEBEE; /* Fond léger pour accentuer l'erreur */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Form labels */
+.form-group label {
+    font-size: 1.1em;
+    color: #555; /* Texte de label léger */
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Input fields */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #CCC; /* Bordure légère */
+    border-radius: 5px;
+    background-color: #FFF;
+    transition: border-color 0.3s ease;
+}
+
+/* Focus effect on inputs */
+.form-group input:focus {
+    outline: none;
+    border-color: #388E3C; /* Bordure verte lors du focus */
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    background-color: #388E3C; /* Bouton vert */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Hover effect for button */
+button:hover {
+    background-color: #2E7D32; /* Couleur plus sombre au survol */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        margin: 50px auto;
+        padding: 15px;
+    }
+
+    .container h2 {
+        font-size: 1.8em;
+    }
+
+    .form-group label {
+        font-size: 1em;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 1.1em;
+    }
+}

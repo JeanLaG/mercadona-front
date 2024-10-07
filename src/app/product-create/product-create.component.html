@@ -1,0 +1,24 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="libelle">Libelle</label>
+      <input id="libelle" formControlName="libelle" type="text">
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <input id="description" formControlName="description" type="text">
+    </div>
+    <div>
+      <label for="prix">Prix</label>
+      <input id="prix" formControlName="prix" type="number">
+    </div>
+    <div>
+      <label for="categorie">Categorie</label>
+      <input id="categorie" formControlName="categorie" type="text">
+    </div>
+    <div>
+      <label for="image">Image</label>
+      <input type="file" (change)="onFileSelect($event)">
+    </div>
+    <button type="submit">Créer Produit</button>
+  </form>
+  

@@ -1,0 +1,60 @@
+<div class="product-catalog">
+  <h2>Catalogue des produits</h2>
+
+  <!-- Filtre par catégorie -->
+  <div class="filter-section">
+    <label for="category-filter">Filtrer par catégorie :</label>
+    <select id="category-filter" [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+      <option value="">Toutes les catégories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="filteredProducts.length === 0">
+    Aucun produit trouvé.
+  </div>
+
+  <!-- Liste des produits -->
+  <div class="product-list">
+    <div *ngFor="let product of filteredProducts | paginate: { itemsPerPage: 6, currentPage: currentPage }" class="product-card">
+      <h3>{{ product.libelle }}</h3>
+      <p>{{ product.categorie }}</p>
+      <p>{{ product.description }}</p>
+      <img [src]="'http://localhost:8080' + product.imageUrl" alt="{{ product.libelle }}" class="product-image">
+
+      <!-- Affichage du prix et de la promotion -->
+      <div *ngIf="product.promotion > 0" class="price promo">
+        <span class="old-price">{{ product.prix }} €</span><br>
+        <span class="new-price">{{ product.prix - (product.prix * product.promotion / 100) }} €</span>
+      </div>
+      <p *ngIf="product.promotion === 0" class="price">{{ product.prix }} €</p>
+
+      <div *ngIf="isAdmin">
+        <!-- Bouton pour ajouter une promotion -->
+        <button (click)="openPromotionModal(product)">Ajouter Promotion</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+
+  <!-- Modale pour ajouter une promotion -->
+  <div *ngIf="isPromotionModalOpen" class="modal">
+    <div class="modal-content">
+      <h3>Ajouter une promotion pour {{ selectedProduct?.libelle }}</h3>
+
+      <label for="promotion">Pourcentage :</label>
+      <input id="promotion" [(ngModel)]="promotionValue" type="number" placeholder="Entrez un pourcentage">
+
+      <label for="startDate">Date de début :</label>
+      <input id="startDate" [(ngModel)]="startDate" type="date">
+
+      <label for="endDate">Date de fin :</label>
+      <input id="endDate" [(ngModel)]="endDate" type="date">
+
+      <button (click)="applyPromotion()">Appliquer Promotion</button>
+      <button (click)="closePromotionModal()">Annuler</button>
+    </div>
+  </div>
+</div>

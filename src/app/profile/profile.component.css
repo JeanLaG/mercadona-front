@@ -1,0 +1,73 @@
+/* Conteneur principal */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Fond léger */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Titre du profil */
+.container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Informations sur le profil */
+.container p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Message d'erreur */
+.error-message {
+    color: #D32F2F; /* Rouge pour les erreurs */
+    background-color: #FFEBEE;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Bouton de modification de profil */
+.container button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #388E3C; /* Vert */
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover {
+    background-color: #2E7D32; /* Vert plus sombre au survol */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .container h2 {
+        font-size: 1.6em;
+    }
+
+    .container p {
+        font-size: 1em;
+    }
+
+    .container button {
+        font-size: 0.9em;
+    }
+}

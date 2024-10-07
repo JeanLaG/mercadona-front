@@ -1,0 +1,24 @@
+<div class="container">
+    <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
+    <h2>Modifier Profile</h2>
+    <form (ngSubmit)="updateUser()">
+        <div class="form-group">
+                <label for="">Nom: </label>
+                <input type="text" name="name" [(ngModel)]="userData.nom">
+        </div>
+        <div class="form-group">
+            <label for="">Prenom: </label>
+            <input type="text" name="name" [(ngModel)]="userData.prenom">
+    </div>
+        <div class="form-group">
+                <label for="">Email: </label>
+                <input type="text" name="emaik" [(ngModel)]="userData.email">
+        </div>
+        <div class="form-group">
+                <label for="">Role: </label>
+                <input type="text" name="role" [(ngModel)]="userData.role">
+        </div>
+
+        <button type="submit">Modifier</button>
+    </form>
+</div>

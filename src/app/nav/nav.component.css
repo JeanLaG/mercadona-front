@@ -1,0 +1,115 @@
+/* Navbar container */
+nav {
+    background-color: #2E7D32; /* Vert foncé */
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo at the extreme left */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 0; /* Remove margin between links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #C8E6C9;
+    font-weight: 500;
+    font-size: 1.2em;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Left-aligned logo */
+nav ul li.left {
+    margin-right: auto; /* Push logo to the left */
+}
+
+nav ul li a.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    color: #81C784;
+}
+
+/* Center the other links */
+nav .center-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 20px; /* Space between the center links */
+}
+
+/* Right aligned links (login/logout/register) */
+nav .right-links {
+    display: flex;
+    gap: 15px; /* Space between the right links */
+}
+
+/* Hover effect for links */
+nav ul li a:hover {
+    background-color: #388E3C;
+    border-radius: 6px;
+    color: white;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .center-links, .right-links {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* Toggle menu button for mobile */
+.menu-toggle {
+    display: none;
+    background-color: #388E3C;
+    color: white;
+    padding: 12px;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.open {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,21 @@
+app = 'mercadona-mercadonaa'
+primary_region = 'cdg'
+
+[build]
+  builder = "paketobuildpacks/builder:base"  # Utilisation des buildpacks pour Angular
+
+[http_service]
+  internal_port = 8080  # Utilisation du port 8080 pour servir l'application
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[env]
+  PORT = "8080"  # Spécification du port dans les variables d'environnement
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1

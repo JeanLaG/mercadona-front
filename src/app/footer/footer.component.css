@@ -1,0 +1,86 @@
+/* Footer Container */
+footer {
+    background-color: #2E7D32; /* Vert foncé Mercadona */
+    color: #FFF; /* Texte blanc */
+    padding: 30px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Footer Main Sections */
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+}
+
+/* Footer Logo (styled similarly to the navbar) */
+.footer-logo {
+    font-family: 'Pacifico', cursive; /* Police stylisée pour le logo */
+    font-size: 2em; /* Taille similaire à celle du logo dans la navbar */
+    color: #81C784; /* Vert lumineux pour correspondre au style du logo */
+    margin-bottom: 20px;
+}
+
+/* Footer section titles */
+.footer-section h2 {
+    font-size: 2em;
+    color: #C8E6C9; /* Vert clair pour les titres */
+    margin-bottom: 20px;
+}
+
+/* Text and links in footer */
+.footer-section p, .footer-section a {
+    font-size: 1em;
+    color: #EEE;
+    line-height: 1.8;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #C8E6C9; /* Liens en vert clair */
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #A5D6A7; /* Lien plus clair au survol */
+}
+
+/* Footer Social Links */
+.footer-section.social a {
+    display: block;
+    margin: 10px 0;
+}
+
+.footer-section.social a i {
+    margin-right: 10px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #1B5E20; /* Vert encore plus foncé pour la section de bas de page */
+    color: #C8E6C9;
+    font-size: 0.9em;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+    }
+}
