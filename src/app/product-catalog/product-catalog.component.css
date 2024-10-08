@@ -24,7 +24,10 @@
     text-align: center;
     position: relative;
 }
-
+.vert{
+    color: #2E7D32;
+    font-weight: bold;
+}
 /* Ligne sous le titre */
 .product-catalog h2::after {
     content: '';

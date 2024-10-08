@@ -18,7 +18,7 @@
   <div class="product-list">
     <div *ngFor="let product of filteredProducts | paginate: { itemsPerPage: 6, currentPage: currentPage }" class="product-card">
       <h3>{{ product.libelle }}</h3>
-      <p>{{ product.categorie }}</p>
+      <p class="vert">{{ product.categorie }}</p>
       <p>{{ product.description }}</p>
       <img [src]="'https://whispering-atoll-68233-83ac924b6541.herokuapp.com' + product.imageUrl" alt="{{ product.libelle }}" class="product-image">
 
