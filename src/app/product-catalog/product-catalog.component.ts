@@ -38,7 +38,6 @@ export class ProductCatalogComponent implements OnInit {
     this.productService.getProducts().subscribe(
       data => {
         this.products = data;
-        console.log("aaaaa " +data);
         this.filteredProducts = data;
         this.getCategories();
       },

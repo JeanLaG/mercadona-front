@@ -3,9 +3,9 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f3f3f3;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
@@ -16,49 +16,52 @@
 
 /* Nouveau style pour le titre du catalogue */
 .product-catalog h2 {
-    font-size: 3em;
-    margin-bottom: 40px;
+    font-size: 2.8em;
+    margin-bottom: 30px;
     color: #2E7D32;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-align: center;
     position: relative;
+}
+.vert{
+    color: #388E3C;
+    font-weight: bold;
 }
 
 /* Ligne sous le titre */
 .product-catalog h2::after {
     content: '';
-    width: 120px;
-    height: 5px;
+    width: 100px;
+    height: 4px;
     background-color: #388E3C;
     display: block;
-    margin: 15px auto 0;
+    margin: 10px auto 0;
     border-radius: 2px;
 }
 
 /* Cartes de produits */
 .product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
     width: 100%;
     margin-top: 30px;
 }
 
 /* Cartes de produits */
 .product-card {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
 }
 
 /* Image du produit */
@@ -67,51 +70,50 @@
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-.product-card:hover .product-image {
-    transform: scale(1.05);
 }
 
 /* Titre du produit */
 .product-card h3 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: #333;
     margin-bottom: 10px;
 }
 
 /* Description du produit */
 .product-card p {
-    font-size: 1.1em;
+    font-size: 1em;
     color: #666;
     margin-bottom: 20px;
 }
 
 /* Prix du produit */
 .price {
-    font-size: 1.3em;
+    font-size: 18px;
     color: #333;
 }
 
 /* Ancien prix pour la promotion */
 .old-price {
     text-decoration: line-through;
-    color: #999;
+    color: gray;
     margin-right: 10px;
 }
 
 /* Nouveau prix pour la promotion */
 .new-price {
     font-weight: bold;
-    color: #D32F2F;
-    font-size: 1.5em;
+    color: red;
 }
 
-/* Section pour le vert (promotion) */
-.vert {
-    color: #388E3C;
+/* Classe pour la promotion */
+.promo .old-price {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.promo .new-price {
     font-weight: bold;
+    color: red;
 }
 
 /* Pagination */
@@ -124,70 +126,140 @@
     padding: 0;
 }
 
-.pagination-controls a,
+.pagination-controls a, 
 .pagination-controls button {
     display: inline-block;
-    padding: 12px 18px;
+    padding: 10px 15px;
     margin: 0 5px;
     font-size: 16px;
-    color: #333;
+    color: #333;  /* Couleur du texte normal */
     background-color: transparent;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+/* Style du bouton ou numéro de page active */
 .pagination-controls .active {
-    background-color: #388E3C;
-    color: white;
+    background-color: #388E3C; /* Couleur verte */
+    color: white; /* Texte en blanc */
     border-color: #388E3C;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
 
-.pagination-controls a:hover,
+/* Effet hover sur les liens */
+.pagination-controls a:hover, 
 .pagination-controls button:hover {
-    background-color: #2E7D32;
+    background-color: #2E7D32;  /* Vert foncé pour le hover */
     color: white;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    border-color: #2E7D32;
 }
 
-/* Modal Styling */
+/* Style des boutons désactivés */
+.pagination-controls .disabled {
+    color: #ccc;
+    background-color: transparent;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+.pagination-controls .disabled:hover {
+    background-color: transparent;
+    color: #ccc;
+    border-color: #ddd;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .product-catalog h2 {
+        font-size: 2.2em;
+    }
+}
+
+/* Section du filtre */
+.filter-section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-section label {
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-section select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style pour la fenêtre modale */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Couleur de fond semi-transparente */
+    animation: fadeIn 0.5s ease; /* Animation d'apparition */
+}
+
 .modal-content {
     background-color: #fefefe;
-    margin: 8% auto;
+    margin: 10% auto; /* Centrage vertical et horizontal */
     padding: 20px;
     border: 1px solid #888;
-    width: 450px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Largeur de la pop-up */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Légère ombre portée */
 }
 
-/* Input Styling */
-.modal-content input[type="number"],
-.modal-content input[type="date"] {
+/* Animation d'apparition de la modale */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input pour la modale */
+.modal-content input[type="number"], .modal-content input[type="date"] {
     width: calc(100% - 20px);
-    padding: 12px;
+    padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
 }
 
+/* Boutons dans la modale */
 .modal-content button {
-    padding: 12px 24px;
+    padding: 10px 20px;
     margin: 10px 5px 0 0;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    background-color: #388E3C;
+    background-color: #388E3C; /* Vert pour le bouton principal */
     color: white;
     transition: background-color 0.3s ease;
 }
 
 .modal-content button:hover {
-    background-color: #2E7D32;
+    background-color: #2E7D32; /* Vert foncé au survol */
 }
 
 .modal-content button.cancel {
@@ -195,22 +267,28 @@
 }
 
 .modal-content button.cancel:hover {
-    background-color: #555;
+    background-color: #555; /* Gris foncé au survol */
 }
 
-/* Bouton pour "Ajouter Promotion" */
+/* Style du bouton "Ajouter Promotion" */
 .product-card button {
-    padding: 12px 25px;
-    background-color: #388E3C;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #388E3C; /* Vert principal */
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .product-card button:hover {
-    background-color: #2E7D32;
-    transform: translateY(-2px);
+    background-color: #2E7D32; /* Vert foncé au survol */
+    transform: translateY(-2px); /* Légère élévation au survol */
+}
+
+.product-card button:active {
+    background-color: #1B5E20; /* Couleur encore plus foncée lorsqu'on clique */
+    transform: translateY(0); /* Retour au niveau normal lors du clic */
 }

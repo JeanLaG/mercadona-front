@@ -10,7 +10,6 @@
     </select>
   </div>
 
-  <!-- Affichage si aucun produit trouvé -->
   <div *ngIf="filteredProducts.length === 0">
     Aucun produit trouvé.
   </div>
@@ -24,17 +23,9 @@
       <img [src]="'https://whispering-atoll-68233-83ac924b6541.herokuapp.com' + product.imageUrl" alt="{{ product.libelle }}" class="product-image">
 
       <!-- Affichage du prix et de la promotion -->
-      <div *ngIf="product.promotion !== null && product.promotion > 0" class="price promo">
+      <div *ngIf="product.promotion > 0" class="price promo">
         <span class="old-price">{{ product.prix }} €</span><br>
         <span class="new-price">{{ product.prix - (product.prix * product.promotion / 100) }} €</span>
-        
-        <!-- Affichage des dates de promotion si elles ne sont pas null -->
-        <div *ngIf="product.start_promotion_date !== null">
-          <p>Date de début de la promotion : {{ product.start_promotion_date | date: 'dd/MM/yyyy' }}</p>
-        </div>
-        <div *ngIf="product.end_promotion_date !== null">
-          <p>Date de fin de la promotion : {{ product.end_promotion_date | date: 'dd/MM/yyyy' }}</p>
-        </div>
       </div>
       <p *ngIf="product.promotion === 0" class="price">{{ product.prix }} €</p>
 
@@ -63,7 +54,7 @@
       <input id="endDate" [(ngModel)]="endDate" type="date">
 
       <button (click)="applyPromotion()">Appliquer Promotion</button>
-      <button (click)="closePromotionModal()" class="cancel">Annuler</button>
+      <button (click)="closePromotionModal()">Annuler</button>
     </div>
   </div>
 </div>
