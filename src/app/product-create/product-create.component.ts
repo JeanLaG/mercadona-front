@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-create',
@@ -15,7 +16,7 @@ export class ProductCreateComponent {
   productForm: FormGroup;
   selectedFile: File | null = null;
 
-  constructor(private fb: FormBuilder, private productService: ProductService) {
+  constructor(private fb: FormBuilder, private productService: ProductService, private router: Router) {
     // Initialisation du formulaire
     this.productForm = this.fb.group({
       libelle: [''],
