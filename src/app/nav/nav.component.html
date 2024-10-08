@@ -1,17 +1,14 @@
 <nav>
     <button class="menu-toggle" (click)="toggleMenu()">Menu</button>
     <ul [class.open]="menuOpen">
-        <!-- Logo avec icône -->
         <li class="left"><a class="logo" routerLink="/"><i class="fas fa-store"></i>Mercadona</a></li>
         
-        <!-- Liens du centre avec icônes -->
         <div class="center-links">
-            <li><a routerLink="/products"><i class="fas fa-th-list"></i> Catalogue</a></li>
-            <li *ngIf="isAdmin"><a routerLink="/products/add"><i class="fas fa-plus"></i> Ajouter Produit</a></li>
             <li *ngIf="isAuthenticated"><a routerLink="/profile"><i class="fas fa-user"></i> Profile</a></li>
             <li *ngIf="isAdmin"><a routerLink="/users"><i class="fas fa-users-cog"></i> Gestion des utilisateurs</a></li>
+            <li><a routerLink="/products"><i class="fas fa-th-list"></i> Catalogue</a></li>
+            <li *ngIf="isAdmin"><a routerLink="/products/add"><i class="fas fa-plus"></i> Ajouter Produit</a></li>
         </div>
-
 
         <div class="right-links">
             <li *ngIf="!isAuthenticated"><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
