@@ -37,7 +37,9 @@ export class ProductCreateComponent {
 
       this.productService.createProduct(productData, this.selectedFile).subscribe(
         (response) => {
+
           console.log('Produit créé avec succès', response);
+          this.router.navigate(['/products']);
         },
         (error) => {
           console.error('Erreur lors de la création du produit', error);
